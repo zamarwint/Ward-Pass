@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="ward-pass-icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/app.js" async defer></script>
+    <title>Ward-Pass App</title>
+  </head>
+  <body>
+    <div class="main-section">
+      <div class="slider-box">
+        <label for="slider">Choose your desired password length</label>
+        <input
+          type="range"
+          name="slider"
+          id="slider"
+          min="0"
+          max="20"
+          step="1"
+        />
+        <h3 class="range-value">0</h3>
+      </div>
+
+      <div class="checkbox-divs">
+        <div class="checkbox-div checkbox-div1">
+          <input type="checkbox" name="uppercase" id="uppercase" />
+          <label for="uppercase">Include UPPERCASE letters</label>
+        </div>
+
+        <div class="checkbox-div checkbox-div2">
+          <input type="checkbox" name="lowercase" id="lowercase" />
+          <label for="lowercase">Include lowercase letters</label>
+        </div>
+
+        <div class="checkbox-div checkbox-div3">
+          <input type="checkbox" name="numbers" id="numbers" />
+          <label for="numbers">Include numbers</label>
+        </div>
+
+        <div class="checkbox-div checkbox-div4">
+          <input type="checkbox" name="symbols" id="symbols" />
+          <label for="symbols">Include symbols</label>
+        </div>
+
+        <div class="checkbox-div checkbox-div5">
+          <input type="checkbox" name="spaces" id="spaces" />
+          <label for="spaces">Include spaces</label>
+        </div>
+      </div>
+
+      <div class="password-box">
+        <label for="password">Generated Password</label>
+        <input type="text" name="password" id="password" disabled />
+        <div class="password-buttons">
+          <button class="generate-button" onclick="passwordGenerate()">
+            Generate
+          </button>
+          <button class="copy-button" onclick="copyPassword()">Copy</button>
+        </div>
+      </div>
+
+      <!-- <button class="try-dialog1">Try Dialog</button>
+      <button class="try-dialog2">Try Dialog</button> -->
+
+      <dialog data-success>
+        <div class="dialog-content">
+          <img
+            class="close-success-modal"
+            src="x-white.svg"
+            alt="Exit"
+            width="30"
+            height="30"
+          />
+          <img src="success.svg" alt="Success image" width="150" height="150" />
+          <h3>Password copied successfully!</h3>
+        </div>
+      </dialog>
+      <dialog data-error>
+        <div class="dialog-content">
+          <img
+            class="close-error-modal"
+            src="x-white.svg"
+            alt="Exit"
+            width="30"
+            height="30"
+          />
+          <img src="error.svg" alt="Error image" width="150" height="150" />
+          <h3>An error occured! Password not copied.</h3>
+        </div>
+      </dialog>
+    </div>
+  </body>
+</html>

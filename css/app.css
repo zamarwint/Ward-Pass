@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --primary-color: #ffff00;
+  --secondary-color: #4d4d4d;
+  --teritary-color: #000000;
+  --lighter-color: #efeeee;
+  --darker-color: #1a1a1a;
+  --text-color: #fff;
+  --text-clip: linear-gradient(
+    180deg,
+    var(--primary-color),
+    var(--darker-color)
+  );
+  --gold-color: #ffee00;
+  --dim-gold-color: #ffee0086;
+  --light-gold-color: #ffee00ae;
+
+  --font-family: "Inter", sans-serif;
+  --heading-one-font-size: 48px;
+  --heading-two-font-size: 36px;
+  --heading-three-font-size: 32px;
+  --heading-four-font-size: 24px;
+  --heading-five-font-size: 20px;
+  --heading-six-font-size: 18px;
+}
+
+.light-mode {
+  --secondary-color: #eeeeee;
+  --teritary-color: #ffffff;
+  --text-color: #000000;
+  --text-clip: linear-gradient(
+    180deg,
+    var(--primary-color),
+    var(--darker-color) 80%
+  );
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  background: linear-gradient(
+    0deg,
+    var(--primary-color),
+    var(--teritary-color) 65%
+  );
+  color: var(--teritary-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: var(--text-color);
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  background-color: var(--darker-color);
+  padding: 2em;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 1);
+}
+
+.main-section div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slider-box {
+  gap: 2em;
+}
+
+.slider-box label {
+  font-size: var(--heading-two-font-size);
+  font-weight: 700;
+}
+
+#slider {
+  width: 75%;
+  height: 5em;
+  border-radius: 50px;
+  accent-color: var(--primary-color);
+}
+
+.range-value {
+  margin-top: -20px;
+}
+
+.checkbox-divs .checkbox-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  text-align: left;
+  gap: 0.25em;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.checkbox-div input[type="checkbox"] {
+  appearance: none;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid var(--primary-color);
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+.checkbox-div input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary-color);
+}
+
+.checkbox-div input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.password-box label {
+  font-size: var(--heading-two-font-size);
+  font-weight: 700;
+}
+
+#password {
+  width: 100%;
+  height: 2em;
+  border-radius: 50px;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: var(--heading-four-font-size);
+  text-align: center;
+}
+
+.password-box {
+  gap: 0.75em;
+}
+
+.password-box div {
+  display: block;
+  padding: 10px;
+}
+
+.password-buttons button {
+  padding: 20px;
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-family);
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: transform 200ms ease;
+}
+
+.password-buttons button:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+[data-success],
+[data-error] {
+  background-color: var(--teritary-color);
+  padding: 3em;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 1);
+  text-align: center;
+
+  /* Closed state: scaled down and transparent */
+  opacity: 0;
+  transform: scale(0.8);
+
+  /* Transition setup including allow-discrete for display */
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+    overlay 0.3s allow-discrete,
+    display 0.3s allow-discrete;
+}
+
+[data-success]:open,
+[data-error]:open {
+  /* Open state: fully visible and normal size */
+  opacity: 1;
+  transform: scale(1);
+
+  /* Define the starting point for the entry animation */
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+[data-success]::backdrop,
+[data-error]::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+[data-success]:open::backdrop,
+[data-error]:open::backdrop {
+  opacity: 1;
+}
+
+[data-success] .dialog-content,
+[data-error] .dialog-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+[data-success] .dialog-content h3,
+[data-error] .dialog-content h3 {
+  color: var(--text-color);
+  font-size: var(--heading-four-font-size);
+  height: 0;
+  margin-top: -5px;
+}
+
+.close-success-modal,
+.close-error-modal {
+  cursor: pointer;
+}
