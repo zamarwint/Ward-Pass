@@ -1,11 +1,3 @@
-// Slider Live update
-const slider = document.getElementById("slider");
-const sliderText = document.querySelector(".range-value");
-
-slider.addEventListener("input", () => {
-  sliderText.textContent = slider.value;
-});
-
 // Handling dialogs
 const successDialog = document.querySelector("[data-success]");
 const errorDialog = document.querySelector("[data-error]");
@@ -18,6 +10,14 @@ closeSuccessModal.addEventListener("click", () => {
 
 closeErrorModal.addEventListener("click", () => {
   errorDialog.close();
+});
+
+// Slider Live update
+const slider = document.getElementById("slider");
+const sliderText = document.querySelector(".range-value");
+
+slider.addEventListener("input", () => {
+  sliderText.textContent = slider.value;
 });
 
 // Testing purposes
@@ -95,7 +95,23 @@ function passwordGenerate() {
   let password = "";
   let length = parseInt(slider.value);
 
+  if (sliderText.textContent === "0") {
+    errorDialog.showModal();
+    return;
+  }
+
   // Functionality
+  if (
+    !upper.checked &&
+    !lower.checked &&
+    !number.checked &&
+    !symbol.checked &&
+    !spaces.checked
+  ) {
+    errorDialog.showModal();
+    return;
+  }
+
   if (upper.checked) combination += uppercaseLetters;
   if (lower.checked) combination += lowercaseLetters;
   if (spaces.checked) {
