@@ -20,7 +20,7 @@ slider.addEventListener("input", () => {
   sliderText.textContent = slider.value;
 });
 
-// Testing purposes (testing dialog)
+// Testing purposes (tested dialog)
 
 // const trySDialog = document.querySelector(".try-dialog1");
 // const tryEDialog = document.querySelector(".try-dialog2");
