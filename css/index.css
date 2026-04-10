@@ -60,9 +60,29 @@ body {
   flex-direction: column;
 }
 
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 95vw;
+  height: 10vh;
+}
+
+#toggle {
+  transition: transform 100ms ease;
+  transform: scale(2);
+  color: white;
+  text-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+#toggle:hover {
+  transform: scale(2.2);
+  cursor: pointer;
+}
+
 .heading-box {
   width: 50vw;
-  height: 100vh;
+  height: 77vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,19 +165,6 @@ ol li {
   border-color: var(--lighter-color);
   color: #000;
   transform: scale(1.05);
-}
-
-#toggle {
-  transition: transform 100ms ease;
-  transform: scale(2);
-  color: white;
-  margin-top: 4em;
-  text-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-
-#toggle:hover {
-  transform: scale(2.2);
-  cursor: pointer;
 }
 
 .learn-more {
@@ -245,5 +252,10 @@ html {
 
   .learn-more {
     margin-top: 50px;
+    padding: 20px;
+  }
+
+  .btn3 {
+    width: 80%;
   }
 }
