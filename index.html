@@ -12,22 +12,30 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="js/index.js" defer></script>
     <title>Ward-Pass</title>
   </head>
   <body>
-    <div class="main-area">
+    <div class="main-area" data-aos="fade-down" data-aos-duration="2500">
       <div class="heading-box">
-        <h1>Ward Pass</h1>
-        <h3>Your go-to secure password generator.</h3>
-        <div class="buttons">
+        <h1 data-aos="fade-down" data-aos-duration="1000">Ward Pass</h1>
+        <h3 data-aos="fade-down" data-aos-duration="1500">
+          Your go-to secure password generator.
+        </h3>
+        <div class="buttons" data-aos="fade-down" data-aos-duration="2000">
           <a href="app.html" class="button btn1">Generate Password</a>
           <a href="#learn-more" class="button btn2">Learn More</a>
         </div>
         <i id="toggle" class="fa-solid fa-sun"></i>
       </div>
 
-      <div class="learn-more" id="learn-more">
+      <div
+        class="learn-more"
+        id="learn-more"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
         <h2>What is Ward Pass?</h2>
         <h4>
           A simple application that allows you to create strong and secure
@@ -54,5 +62,9 @@
         <a href="app.html" class="button btn3">Try Ward Pass</a>
       </div>
     </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
