@@ -11,12 +11,12 @@ It's very simple. **Here are the instructions:**
 3. Click the "Generate" button when finished.
 4. Copy the generated password by clicking the "copy" button above the "Choose your desired password length" area.
 
-![App Screenshot 1](assets/app-screenshot.png)
-![App Screenshot 2](assets/app-screenshot2.png)
+![App Screenshot 1](src/assets/app-screenshot.png)
+![App Screenshot 2](src/assets/app-screenshot2.png)
 
-## Download
+## Download for Windows
 
-**_NB: This feature has not been developed as yet._**
+**_NB: This feature has not been developed as yet, and it will be electron based._**
 
 To download this application on Github, click on "Ward Pass V1" under "Releases", then click on "Ward.Pass.exe".
 
