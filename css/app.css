@@ -311,8 +311,9 @@ label {
 }
 
 html {
+  overflow: auto;
   scrollbar-color: var(--secondary-color) var(--teritary-color); /** Scroll and track **/
-  scrollbar-width: auto; /* or 'thin' */
+  scrollbar-width: none; /* 'auto' or 'thin', hiding scrollbar now */
 }
 
 @media (max-width: 768px) {
@@ -321,27 +322,12 @@ html {
     height: 80vh;
   }
 
-  .header-items .btn1 {
-  }
-
-  .header-items #toggle {
-  }
-
-  .slider-box {
-  }
-
   .slider-box label {
     font-size: var(--heading-four-font-size);
   }
 
-  .checkbox-divs {
-  }
-
   .checkbox-div label {
     font-size: var(--heading-five-font-size);
-  }
-
-  .password-box {
   }
 
   .password-box label {

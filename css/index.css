@@ -209,8 +209,9 @@ ol li {
 }
 
 html {
+  overflow: auto;
   scrollbar-color: var(--secondary-color) var(--teritary-color); /** Scroll and track **/
-  scrollbar-width: auto; /* or 'thin' */
+  scrollbar-width: none; /* 'auto' or 'thin', hiding scrollbar now */
 }
 
 /* ::-webkit-scrollbar {
